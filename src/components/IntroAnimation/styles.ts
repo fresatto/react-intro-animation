@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-export const MessageWrapper = styled.div`
+export const MessageWrapper = styled(animated.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -27,12 +28,12 @@ export const MessageWrapper = styled.div`
 
     > span {
       display: inline-block;
-      transform: translateY(100%);
+      /* transform: translateY(100%); */
     }
   }
 `;
 
-export const Slider = styled.div`
+export const Slider = styled(animated.div)`
   position: fixed;
   top: 0;
   right: 0;

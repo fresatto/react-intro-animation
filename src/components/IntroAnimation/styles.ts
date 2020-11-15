@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const MessageWrapper = styled.div`
+export const MessageWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -32,7 +33,7 @@ export const MessageWrapper = styled.div`
   }
 `;
 
-export const Slider = styled.div`
+export const Slider = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -40,5 +41,5 @@ export const Slider = styled.div`
   bottom: 0;
 
   background-color: gray;
-  z-index: 1005;
+  z-index: 1015;
 `;

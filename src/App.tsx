@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <IntroAnimation />
       <Home />
     </>
   );

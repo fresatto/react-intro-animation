@@ -3,9 +3,13 @@ import { useTrail, animated, useSpring, useChain } from 'react-spring';
 
 import { MessageWrapper, Slider } from './styles';
 
+interface IntroAnimationProps {
+  animationsRefs: React.MutableRefObject<any>[];
+}
+
 const msgs = ['Creating inovation', 'For Everyday', 'People'];
 
-const IntroAnimation: React.FC = () => {
+const IntroAnimation: React.FC<IntroAnimationProps> = ({ animationsRefs }) => {
   const trailRef = useRef(null);
   const blackContainerOutRef = useRef(null);
   const sliderRef = useRef(null);
@@ -17,9 +21,10 @@ const IntroAnimation: React.FC = () => {
     config: {
       mass: 5,
       tension: 2000,
-      friction: 200,
+      friction: 100,
       duration: 1000,
       delay: 400,
+      precision: 0.1,
     },
     ref: trailRef,
   });
@@ -37,7 +42,7 @@ const IntroAnimation: React.FC = () => {
     ref: sliderRef,
   });
 
-  useChain([trailRef, blackContainerOutRef, sliderRef]);
+  useChain([trailRef, blackContainerOutRef, sliderRef, ...animationsRefs]);
 
   return (
     <>

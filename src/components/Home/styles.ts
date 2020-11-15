@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { animated } from 'react-spring';
 import Hero from '../../assets/img/hero.jpg';
 
 export const Container = styled.section`
@@ -8,7 +8,7 @@ export const Container = styled.section`
   background-size: cover;
 `;
 
-export const Header = styled.header`
+export const Header = styled(animated.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,23 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import { Container, Header, BigText } from './styles';
-import { useSpring } from 'react-spring';
 
 import IntroAnimation from '../IntroAnimation';
 
 const Home: React.FC = () => {
-  const homeFadeInRef = useRef(null);
-
-  const fadeIn = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    ref: homeFadeInRef,
-  });
-
   return (
     <>
       <Container>
-        <Header style={{ ...fadeIn }}>
+        <Header>
           <h1>Afloat</h1>
 
           <ul>
@@ -28,7 +19,7 @@ const Home: React.FC = () => {
         </Header>
         <BigText>Stay Afloat</BigText>
       </Container>
-      <IntroAnimation animationsRefs={[homeFadeInRef]} />
+      <IntroAnimation />
     </>
   );
 };
